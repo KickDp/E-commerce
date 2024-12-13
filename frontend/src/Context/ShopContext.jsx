@@ -16,7 +16,7 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     // Fetch all products
-    fetch("http://localhost:4000/allproducts")
+    fetch("https://e-commerce-backend-tgse.onrender.com/allproducts")
       .then((response) => response.json())
       .then((data) => setAll_Product(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -24,7 +24,7 @@ const ShopContextProvider = (props) => {
     // Fetch user's cart if authenticated
     const token = localStorage.getItem("auth-token");
     if (token) {
-      fetch("http://localhost:4000/getcart", {
+      fetch("https://e-commerce-backend-tgse.onrender.com/getcart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -43,7 +43,7 @@ const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     const token = localStorage.getItem("auth-token");
     if (token) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch("https://e-commerce-backend-tgse.onrender.com/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -64,7 +64,7 @@ const ShopContextProvider = (props) => {
     
     const token = localStorage.getItem("auth-token");
     if (token) {
-      fetch("http://localhost:4000/removefromcart", {
+      fetch("https://e-commerce-backend-tgse.onrender.com/removefromcart", {
         method: "POST",
         headers: {
           Accept: "application/json",  // Fixed to application/json
