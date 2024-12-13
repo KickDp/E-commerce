@@ -27,7 +27,7 @@ const AddProduct =()=>{
         let formData = new FormData();
         formData.append('product',image);
 
-        await fetch('http://localhost:4000/upload',{
+        await fetch('https://e-commerce-backend-tgse.onrender.com/upload',{
             method:'POST',
             header:{
                 Accept:'application/json',
@@ -39,7 +39,7 @@ const AddProduct =()=>{
     if(responseData.success){
         product.image = responseData.imageUrl;
         console.log(product);
-        await fetch('http://localhost:4000/addproduct',{
+        await fetch('https://e-commerce-backend-tgse.onrender.com/addproduct',{
             method:'POST',
             headers:{
                 Accept:'application/json',
